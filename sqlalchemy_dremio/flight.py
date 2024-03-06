@@ -191,7 +191,7 @@ class DremioDialect_flight(default.DefaultDialect):
         return [[";".join(connectors)], connect_args]
 
     @classmethod
-    def dbapi(cls):
+    def import_dbapi(cls):
         import sqlalchemy_dremio.db as module
         return module
 
