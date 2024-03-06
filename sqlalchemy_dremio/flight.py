@@ -155,6 +155,7 @@ class DremioDialect_flight(default.DefaultDialect):
     poolclass = pool.SingletonThreadPool
     statement_compiler = DremioCompiler
     paramstyle = 'pyformat'
+    supports_statement_cache = True
     ddl_compiler = DremioDDLCompiler
     preparer = DremioIdentifierPreparer
     execution_ctx_cls = DremioExecutionContext
