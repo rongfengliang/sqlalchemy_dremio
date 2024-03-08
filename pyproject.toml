@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "sqlalchemy_dremio"
+version = "3.0.4"
+description = "dremio sqlalchemy driver"
+authors = ["rongfengliang <1141591465@qq.com>"]
+license = "Apache Software License"
+readme = "README.md"
+packages = [
+    { include = "sqlalchemy_dremio", from = "." }
+]
+[tool.poetry.dependencies]
+python = "^3.7"
+sqlalchemy = "^2.0.28"
+pyarrow = "^15.0.0"
+pandas = "^2.2.1"
+
+[tool.poetry.plugins."sqlalchemy.dialects"]
+"dremio.flight" = "sqlalchemy_dremio.flight:DremioDialect_flight"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

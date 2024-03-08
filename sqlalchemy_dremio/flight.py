@@ -195,6 +195,11 @@ class DremioDialect_flight(default.DefaultDialect):
     def import_dbapi(cls):
         import sqlalchemy_dremio.db as module
         return module
+    
+    @classmethod
+    def dbapi(cls):
+        import sqlalchemy_dremio.db as module
+        return module
 
     def connect(self, *cargs, **cparams):
         return self.dbapi.connect(*cargs, **cparams)
